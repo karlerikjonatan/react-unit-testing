@@ -1,4 +1,5 @@
 /* eslint-disable testing-library/no-unnecessary-act */
+
 import React from "react";
 import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
@@ -9,7 +10,7 @@ import Hello from "./hello";
 // By unmounting after each test we avoid "leaky" tests.
 let container = null;
 beforeEach(() => {
-  jest.spyOn(console, "error").mockImplementation(() => {}); // Ignore this line, it's because of React 18.
+  jest.spyOn(console, "error").mockImplementation(() => {}); // Ignore this line, it mutes React 18 warnings.
   container = document.createElement("div");
   document.body.appendChild(container);
 });
